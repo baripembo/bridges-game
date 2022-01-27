@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Wisconsin's Structurally Deficient Bridges</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://front.moveon.org/wp-content/uploads/2018/04/cropped-38875418-52635f78-4228-11e8-82da-b221a5a85253-32x32.png" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Import Mapbox GL JS -->
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet" />
+
+    <!-- Import Mapbox GL Geocoder -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' rel='stylesheet' />
+
+    <!-- Import Mapbox GL Directions -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css" type="text/css" />
+
+    <!-- Import Turf & Polyline -->
+    <script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-polyline/1.1.1/polyline.js"></script>
+
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+  </head>
+
+  <body>
+    <div class="bridges">
+      <div id="map"></div>
+      <div id="overlay">
+        <h1>Wisconsin's Structurally Deficient Bridges</h1>
+
+        <div id="static-map"></div>
+
+        <section id="step-vehicle">
+          Pick your vehicle:<br>
+          <div class="vehicle-selector">
+            <input type="radio" id="a" name="vehicle" value="A">
+            <label for="a">A</label>
+            <input type="radio" id="b" name="vehicle" value="B">
+            <label for="b">B</label>
+            <input type="radio" id="c" name="vehicle" value="C">
+            <label for="c">C</label>
+          </div>
+        </section>
+
+        <section id="step-start">
+          Enter an address:
+          <div id="geocoder"></div>
+        </section>
+
+        <section id="step-end">
+          <label for="destination">Choose a destination:</label><br>
+          <select name="destination" id="destinationSelector">
+            <option value="">Select one</option>
+            <option value="0">Milwaukee Zoo</option>
+            <option value="1">State Capitol</option>
+            <option value="2">Wisconsin Dells</option>
+          </select>
+        </section>
+
+        <a href="#" id='btn-go'>GO</a>
+      </div>
+
+      <div id="popup">
+        <p>Good News/Bad News</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p>CTA | Share | Pledge</p>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

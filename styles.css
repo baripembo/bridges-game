@@ -1,0 +1,74 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0; }
+
+.bridges h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  text-align: center;
+  text-transform: uppercase; }
+
+.bridges p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 22px; }
+
+.bridges #map {
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1; }
+
+.bridges #static-map {
+  border-radius: 50%;
+  height: 300px;
+  margin: 0 auto 30px;
+  width: 300px; }
+
+.bridges #overlay {
+  background-color: white;
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 2; }
+
+.bridges #popup {
+  background-color: rgba(255, 255, 255, 0.9);
+  display: none;
+  left: 20px;
+  height: 300px;
+  padding: 20px;
+  position: absolute;
+  width: 450px;
+  top: 20px;
+  z-index: 3; }
+
+.bridges .vehicle-selector {
+  margin: 10px 0 20px; }
+
+.bridges .mapboxgl-ctrl-geocoder {
+  margin: 10px auto 20px;
+  max-width: 300px;
+  min-width: 300px;
+  text-align: left; }
+  .bridges .mapboxgl-ctrl-geocoder input[type='text'] {
+    border: 1px solid #000;
+    padding-left: 30px; }
+
+.bridges #destinationSelector {
+  height: 40px;
+  margin: 10px auto 20px;
+  padding: 0 10px;
+  width: 300px; }
+
+.bridges #step-start,
+.bridges #step-end,
+.bridges #btn-go {
+  display: none; }
