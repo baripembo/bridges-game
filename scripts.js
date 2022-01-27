@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoidGVjaC1zZWN1cmVtb3Zlb25vcmciLCJhIjoiY2t5b3N3YjN4MDNiODJvcGVtZGZvZnk3bCJ9.dKm7TyTKaFK5Hcn7jun5Fw';//'pk.eyJ1IjoiZXJpa2F3ZWkiLCJhIjoiY2pqb2kzeXJoMmM1eDNsc280YnBub2d6aCJ9.DapwlemDz4dhkDIG7sNdwQ';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZXJpa2F3ZWkiLCJhIjoiY2pqb2kzeXJoMmM1eDNsc280YnBub2d6aCJ9.DapwlemDz4dhkDIG7sNdwQ';
 let isFlying = false;
 let startLocation = '';
 let endLocation = '';
@@ -18,7 +18,7 @@ const bounds = [
 //init map
 const map = new mapboxgl.Map({
   container: document.getElementById('map'),
-  style: 'mapbox://styles/tech-securemoveonorg/ckyujrsmv000r14lbcrbe604b',
+  style: 'mapbox://styles/adolphej/ckyd79eal0lyb16lol8hq1gfz',
   center: center,
   minZoom: 1,
   zoom: 12,
@@ -191,7 +191,7 @@ function startAnimation() {
 
 function init() {
 	//set up static map
-	var staticURL = `https://api.mapbox.com/styles/v1/tech-securemoveonorg/ckyujrsmv000r14lbcrbe604b/static/-89.35,43.05,10/300x300?access_token=${mapboxgl.accessToken}`;
+	var staticURL = `https://api.mapbox.com/styles/v1/adolphej/ckyd79eal0lyb16lol8hq1gfz/static/-89.35,43.05,10/300x300?access_token=${mapboxgl.accessToken}`;
   document.getElementById('static-map').style.backgroundImage = `url(${staticURL})`;
 
   //get page elements and set up event listeners
