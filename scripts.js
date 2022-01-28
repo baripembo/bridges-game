@@ -77,7 +77,7 @@ function animatePath(routes) {
 			setTimeout(() => {
 				//start = 0.0;
 				animationComplete();
-			}, 1500);
+			}, 1000);
 		}
 		 
 		// use the phase to get a point that is the appropriate distance along the route
@@ -109,8 +109,24 @@ function animatePath(routes) {
 			lng: alongRoute[0],
 			lat: alongRoute[1]
 		});
-		 
 		map.setFreeCameraOptions(camera);
+
+		// Update point geometry to a new position 
+		const point = {
+			'type': 'FeatureCollection',
+			'features': [
+				{
+					'type': 'Feature',
+					'properties': {},
+					'geometry': {
+						'type': 'Point',
+						'coordinates': [alongRoute[0], alongRoute[1]]
+					}
+				}
+			]
+		};
+		map.getSource('point').setData(point);
+		 
 		window.requestAnimationFrame(frame);
 	}
 	 
@@ -162,6 +178,32 @@ async function getRoute() {
       }
     });
   }
+
+	//add icon
+	map.addLayer({
+    id: 'point',
+    type: 'circle',
+    source: {
+      type: 'geojson',
+      data: {
+        type: 'FeatureCollection',
+        features: [
+          {
+            type: 'Feature',
+            properties: {},
+            geometry: {
+              type: 'Point',
+              coordinates: startLocation
+            }
+          }
+        ]
+      }
+    },
+    paint: {
+      'circle-radius': 10,
+      'circle-color': '#EA1C24'
+    }
+  });
 
   //fly to start location
   isFlying = true;
